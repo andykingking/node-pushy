@@ -4,7 +4,8 @@
   "description": "A node interface to the Pushy API",
   "main": "pushy.js",
   "dependencies": {
-    "needle": "~0.11"
+    "needle": "~0.11",
+    "q": "~1.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

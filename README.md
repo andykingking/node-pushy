@@ -1,5 +1,7 @@
 # node-pushy
 
+[![npm version](https://badge.fury.io/js/node-pushy.svg)](https://badge.fury.io/js/node-pushy)
+
 ## A node wrapper for Pushy
 
 More information on [Pushy](https://pushy.me).

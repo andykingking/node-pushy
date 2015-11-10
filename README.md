@@ -10,7 +10,7 @@ More information on [Pushy](https://pushy.me).
 
 ### NPM
 
-`npm install pushy`
+`npm install node-pushy`
 
 ### Node
 
@@ -26,10 +26,10 @@ Requires:
 
 ```javascript
 // Create a pushy object
-var pushy = require('pushy')(<api_key>);
+var pushy = require('node-pushy')(<api_key>);
 
 // or
-var pushy = require('pushy')();
+var pushy = require('node-pushy')();
 pushy.setApiKey(<api_key>);
 
 // Send push notifications

@@ -33,5 +33,12 @@ var pushy = require('node-pushy')();
 pushy.setApiKey(<api_key>);
 
 // Send push notifications
-pushy.send({message: "You're a bouse!"}, [<userToken1>, <userToken2>]);
+pushy
+    .send({message: "You're a bouse!"}, [<userToken1>, <userToken2>])
+    .then(function(statusCode){
+        console.log('Success!');
+    })
+    .catch(function(error){
+        console.log('Failed: ' + error.message);
+    });
 ```

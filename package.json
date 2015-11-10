@@ -1,6 +1,6 @@
 {
   "name": "node-pushy",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A node interface to the Pushy API",
   "main": "pushy.js",
   "dependencies": {

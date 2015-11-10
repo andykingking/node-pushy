@@ -2,7 +2,10 @@
   "name": "pushy",
   "version": "0.0.1",
   "description": "A node interface to the Pushy API",
-  "main": "index.js",
+  "main": "pushy.js",
+  "dependencies": {
+    "needle": "~0.11"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

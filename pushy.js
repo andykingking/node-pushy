@@ -1,4 +1,5 @@
-var needle = require('needle');
+var Needle  = require('needle'),
+    Q       = require('q');
 
 function Pushy(apiKey){
     this.setApiKey(apiKey);
@@ -25,6 +26,9 @@ Pushy.prototype.send = function(data, userTokens){
         throw new Error('Please provide userTokens to notify');
     }
 
+    // Return a promise
+    var deferred = Q.defer();
+
     // Prepare data to send to Pushy
     var _data = {
         registration_ids: userTokens,
@@ -39,12 +43,16 @@ Pushy.prototype.send = function(data, userTokens){
     };
 
     // POST to Pushy API
-    needle.post(this.url(), _data, options, function(error, response){
-        // If the request fails
+    Needle.post(this.url(), _data, options, function (error, response) {
         if (error || response.statusCode !== 200) {
-           throw new Error('Failed to send to Pushy server');
+            // If the request fails
+            deferred.reject(new Error('Failed to send to Pushy server'));
+        } else {
+            // If the request succeeds
+            deferred.resolve(response.statusCode);
         }
     });
+    return deferred.promise;
 };
 
 module.exports = function(apiKey){
